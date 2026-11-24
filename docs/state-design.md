@@ -43,6 +43,7 @@ One layout for every root, so playbooks never branch on "single project or sever
 ├── phase.json                 whole root: current phase, e.g. {"phase": 1}
 ├── requirements.md            whole root: phase 1, step 1
 ├── work/<id>/work.md          the Work system: one folder per Work
+├── notes/                     anything that fits nowhere else; free form
 └── projects/<project>/
     ├── technical.md           this project's phase 1, step 2
     ├── code-design.md         this project's phase 1, step 3
@@ -54,6 +55,10 @@ Each decision records what was decided and why. A later session or another agent
 ## Works
 
 The progress system is the Work system (Work → Task → Focus, recorded in `work.md`), brought from the human's current harness (no_vibe_agent). Works don't depend on the phase: a phase can contain many Works (for example, 20 in phase 1, 500 in phase 2, 50 in phase 3), and the phase only changes how the AI behaves inside each Work. Phase 1's proof features are normal Works too. Details are not designed yet.
+
+## Notes
+
+`notes/` holds what the human wants kept but that fits nowhere else: not a Work, not knowledge, not a phase 1 decision. For example, future features and their rough order. It has no fixed files and no rules, on purpose: the human will find the real patterns by using it, and a concept can be designed from those later. Notes are not a source of truth and never the main context. The AI reads a note only when the human points to it, so it never acts on a note the human forgot. Work still starts as a new Work.
 
 ## Two modes
 
