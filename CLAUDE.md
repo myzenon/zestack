@@ -32,6 +32,8 @@ The current phase is recorded in `.zestack/state/phase.json`, for example `{"pha
 
 Each piece of work is a Work. Use the `work-ledger` skill for all work, because it records Works and Tasks in `.zestack/state/work/`, which is what lets work survive the end of a session and a switch of machine. Works don't depend on the phase: a phase holds many Works, and the phase only changes how the AI works inside each one.
 
+Before writing or changing code, in any phase, find the projects the change touches by matching the file paths to `Path:` in `.zestack/state/projects/*/project.md`, then read those projects' `technical.md` and `code-design.md`. Read them again after a context summary instead of relying on memory. They hold what the code must follow, such as framework versions whose APIs differ from training data, and code written without them breaks the project's decisions. Read only the touched projects, to keep context small.
+
 ## Conventions
 
 @conventions/index.md

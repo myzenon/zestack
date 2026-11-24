@@ -7,7 +7,7 @@ Each step ends by writing its decisions to a file in `.zestack/state/`. Record w
 ## Steps
 
 1. **Requirements (the what).** Agree on the final goal, the project scope, and each feature roughly. Write to `.zestack/state/requirements.md`, one file for the whole root.
-2. **Technical (the how).** Decide the technology this project's requirements actually need. The examples below are a starting point, not a checklist: skip what doesn't apply to this project, and raise anything important that's missing. Write to `.zestack/state/projects/<project>/technical.md`, one file per project.
+2. **Technical (the how).** Decide the technology this project's requirements actually need. The examples below are a starting point, not a checklist: skip what doesn't apply to this project, and raise anything important that's missing. Write to `.zestack/state/projects/<project>/technical.md`, one file per project. Also write `.zestack/state/projects/<project>/project.md` with `Path:` (the project's code folder, relative to the root) and `What it is:` (one line), so the AI can tell which project a changed file belongs to.
    - Language and runtime: TypeScript on Node, Python, Go
    - App: frontend framework (Next.js, Vue, React), backend framework, API style (REST, GraphQL, RPC)
    - Data: database engine (Postgres, SQLite, DynamoDB), ORM or query layer, migrations, caching

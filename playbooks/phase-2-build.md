@@ -2,10 +2,6 @@
 
 Goal: build the remaining features quickly on the base settled in phase 1. Because the technology and structure are proven, the human trusts the AI more here, so the AI can produce more code per step, and the human reviews faster.
 
-## Before each Work
-
-For each project the Work touches, read `.zestack/state/projects/<project>/technical.md` and `code-design.md`. They record what phase 1 settled and why, and every feature in this phase builds on them.
-
 ## How to work
 
 - Each feature is a Work. Inside it, do a lighter version of phase 1's thinking: what the feature needs, and how it fits the existing design.

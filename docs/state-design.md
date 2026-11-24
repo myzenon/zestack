@@ -45,6 +45,7 @@ One layout for every root, so playbooks never branch on "single project or sever
 ├── work/<id>/work.md          the Work system: one folder per Work
 ├── notes/                     anything that fits nowhere else; free form
 └── projects/<project>/
+    ├── project.md             Path: (code folder, relative to the root) and What it is: (one line)
     ├── technical.md           this project's phase 1, step 2
     ├── code-design.md         this project's phase 1, step 3
     └── topics/                knowledge (knowledge-manager skill): index.md, <topic>/rule.md, doc.md, why.md
