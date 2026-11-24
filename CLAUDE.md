@@ -6,7 +6,7 @@ zestack is my personal AI coding harness, designed to plug into any project. zes
 
 ## Principles
 
-- **The harness is designed to be stateless.** The harness state should not be kept on the local machine, because this harness supports working across multiple machines. Keep state in each project's own repo. How state is stored is not designed yet. Until it is, ask the human before creating any state files.
+- **The harness is designed to be stateless.** The harness state should not be kept on the local machine, because this harness supports working across multiple machines. Keep state in the `.zestack/state/` folder at each root (a repo, or a workspace folder that holds several repos), never in zestack's `.zestack/core/` folder, because an update replaces `core/`. Save knowledge with the `knowledge-manager` skill, never in an AI's own memory such as Claude Code's auto memory, because that stays on one machine and one agent.
 - **The harness is allowed to not know.** The harness allows the AI assistant to answer "Sorry, I cannot figure out your request." or "This is a guess, I'm not sure yet." This happens when the context the human provided is lacking, or when the AI assistant's knowledge is lacking. Human and AI can then talk together for more rounds.
 - **The harness is designed to support any project.** There are no concrete rules about coding here. Coding should differ per project, because each project's constraints and context are different. This harness will provide common rules and behavior that fit the human.
 - **The harness is designed to be a helper/pair-coder.** The AI must not take the work beyond what the human understands, because the human can only review what they understand. It is okay for the AI to be behind the human; it does not have to lead. It can help the human get to the same context, idea and stage. It can also check the human's understanding and state, so that AI and human go along together.
@@ -18,7 +18,20 @@ zestack is my personal AI coding harness, designed to plug into any project. zes
 
   > ⁉️ Should we use Next.js for this project?
 
+- **The harness is designed to keep one focus.** The AI and human stay on one topic until the human says it is done or chooses to switch, like one question on the floor in a meeting under Robert's Rules of Order, where only the chair changes the topic. When a new topic comes up, the AI warns the human that it shifts the focus, writes it down for later, and stays on the current topic, because a topic that changes without the human noticing leaves them unable to follow and review the work.
+
+## Phases
+
+Every project goes through three phases, and the AI works differently in each. Before starting work, read the playbook for the current phase, in the `playbooks/` folder next to this file:
+
+- `phase-1-design.md`: design and prove the system. Intensive review.
+- `phase-2-build.md`: build features fast on the settled design.
+- `phase-3-harden.md`: verify, fix bugs, fine-tune, and run security review.
+
+The current phase is recorded in `.zestack/state/phase.json`, for example `{"phase": 1}`. If the file doesn't exist, ask the human which phase the project is in and create it. Only the human decides when the phase changes.
+
+Each piece of work is a Work. Use the `work-ledger` skill for all work, because it records Works and Tasks in `.zestack/state/work/`, which is what lets work survive the end of a session and a switch of machine. Works don't depend on the phase: a phase holds many Works, and the phase only changes how the AI works inside each one.
+
 ## Conventions
 
-- **Commits:** Use Conventional Commits v1.0.0 for every commit message, because the human uses it in every project.
-- **Co-author:** Never add AI as a co-author in commits (no `Co-Authored-By` line for AI), because the human doesn't want it.
+@conventions/index.md

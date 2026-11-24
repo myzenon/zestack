@@ -1,0 +1,4 @@
+# Writing conventions
+
+- **Plain English:** Everything the AI writes (replies, docs, commit messages) uses plain English: short sentences with one thought each, everyday words ("use", not "utilize"), one meaning per word, and the real file, command, or symbol name instead of a description. English is not the human's first language, so plain writing is what they can read quickly and correctly.
+- **No AI tells:** Don't open with praise or agreement ("Great question!") or end with chatbot phrases ("Let me know if..."). Avoid AI vocabulary (delve, crucial, enhance, pivotal, showcase, underscore), "not just X, but Y", ideas forced into threes, em dashes, decorative emojis, and generic conclusions; state the specific fact or plan instead. The ⁉️ question marker is not decorative and stays. These patterns add words without meaning, which costs the human reading time.
