@@ -14,3 +14,4 @@ A personal AI coding harness that plugs into any project. The AI codes alongside
 - Extendable zestack: add specific skills to a project, like pstack does (and like the current harness's `skill-set.yaml`).
 - Agent switching, for example `AGENTS.md` for Codex.
 - Statecharts and TLA+ checks (as in pstack) for tricky flows: agree on rules in phase 1, verify risky logic in phase 3.
+- Per-project phase: projects in one root can be in different phases (for example a `Phase:` line in each `project.md` instead of one `phase.json`). Open: how a Work that touches two projects in different phases behaves.
